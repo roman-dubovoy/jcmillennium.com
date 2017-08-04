@@ -1,11 +1,11 @@
 <div class="header-top col-xs-12">
     <?=$this->Html->image("millenium_logo.png",
-        array(
+        [
             'alt' => "Millennium JC logo",
-            'url' => array("controller" => "news", "action" => "index"),
+            'url' => ["controller" => "news", "action" => "index"],
             'width' => "100",
             'class' => 'col-xs-2 img-responsive'
-        )
+        ]
     );?>
     <div class="header-text col-xs-8">
         <div class="col-xs-12 club-name">

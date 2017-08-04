@@ -11,16 +11,8 @@ class AthletesController extends AppController{
         $this->set('athletesList', $athletesList);
     }
 
-    public function edit(){
-        if ($this->Session->read('isAdmin')){
-
-        }
-
-    }
-
-    public function delete(){
-        if ($this->Session->read('isAdmin')){
-
-        }
+    public function athletesList(){
+        $athletesList = $this->Athlete->find('all');
+        $this->set('athletesList', $athletesList);
     }
 }

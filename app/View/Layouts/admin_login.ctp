@@ -17,7 +17,7 @@
 </head>
 <body>
 <div id="admin-auth" class="container">
-    <div id="content" class="row">
+    <div id="content" class="row" style="margin-top: 0">
         <?=$this->Session->flash(); ?>
         <?=$this->fetch('content'); ?>
     </div>

@@ -26,6 +26,7 @@
         echo $this->Html->css('bootstrap.css');
         echo $this->Html->css('jquery.dataTables.css');
         echo $this->Html->css('style.css');
+        echo $this->Html->css('admin_style.css');
 
         echo $this->fetch('meta');
         echo $this->fetch('css');

@@ -4,15 +4,15 @@ $(document).keypress(function (event) {
 });
 
 $('#admin-logout-btn').click(function () {
-    location.href = '/admins/logout';
+    location.href = '/admin/logout';
 });
 
 $('#add-product-group-btn').click(function () {
-    location.href = '/admins/productGroups/add'
+    location.href = '/admin/productGroups/add'
 });
 
 $('#add-product-btn').click(function () {
-    location.href = '/admins/products/add'
+    location.href = '/admin/products/add'
 });
 
 $('#users-list').dataTable({
@@ -34,7 +34,7 @@ $('#users-list').dataTable({
     },
     ajax: {
         type: 'post',
-        url: '/admins/users',
+        url: '/admin/users',
         dataType: 'json',
         dataSrc: function ( json ) {
             let tableData = [];
@@ -84,7 +84,7 @@ $('#product-groups-list').dataTable({
     },
     ajax: {
         type: 'post',
-        url: '/admins/productGroups',
+        url: '/admin/productGroups',
         dataType: 'json',
         dataSrc: function ( json ) {
             let tableData = [];
@@ -130,7 +130,7 @@ $('#products-list').dataTable({
     },
     ajax: {
         type: 'post',
-        url: '/admins/products',
+        url: '/admin/products',
         dataType: 'json',
         dataSrc: function ( json ) {
             let tableData = [];

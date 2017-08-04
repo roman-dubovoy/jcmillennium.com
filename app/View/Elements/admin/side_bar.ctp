@@ -18,11 +18,11 @@
         <ul class="nav nav-pills nav-stacked">
             <li><a href="#">НОВОСТИ</a></li>
             <li><a href="#">РЕЗУЛЬТАТЫ</a></li>
-            <li><?=$this->Html->link("ТРЕНЕРЫ", "/admins/coaches");?></li>
-            <li><?=$this->Html->link("СПОРТСМЕНЫ", "/admins/athletes");?></li>
-            <!--<li><?/*=$this->Html->link("ПОЛЬЗОВАТЕЛИ", "/admins/users");*/?></li>
-            <li><?/*=$this->Html->link("ГРУППЫ ТОВАРОВ", "/admins/productGroups");*/?></li>
-            <li><?/*=$this->Html->link("ТОВАРЫ", "/admins/products");*/?></li>-->
+            <li><?=$this->Html->link("ТРЕНЕРЫ", "/admin/coaches");?></li>
+            <li><?=$this->Html->link("СПОРТСМЕНЫ", "/admin/athletes");?></li>
+            <li><?=$this->Html->link("ПОЛЬЗОВАТЕЛИ", "/admin/users");?></li>
+            <li><?=$this->Html->link("ГРУППЫ ТОВАРОВ", "/admin/productGroups");?></li>
+            <li><?=$this->Html->link("ТОВАРЫ", "/admin/products");?></li>
             <li><a href="#">ВИДЕО</a></li>
             <li><a href="#">КАЛЕНДАРЬ</a></li>
             <li><a href="#">РАСПИСАНИЕ</a></li>

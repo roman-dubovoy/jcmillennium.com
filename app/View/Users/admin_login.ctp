@@ -1,3 +1,12 @@
+<div class="login-logo">
+    <?=$this->Html->image("millenium_logo.png",
+        [
+            'alt' => "Millennium JC logo",
+            'width' => "100",
+            'class' => 'col-xs-2 img-responsive'
+        ]
+    );?>
+</div>
 <div class="col-xs-12 auth-container">
     <div class="col-md-offset-4 col-md-4 auth">
         <p>Войти как администратор</p>

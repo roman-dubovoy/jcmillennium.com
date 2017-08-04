@@ -31,4 +31,20 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+    public $components = ['RequestHandler', 'Session', 'Cookie', 'DebugKit.Toolbar'];
+
+    public function beforeFilter(){
+        $adminPages = [
+            'usersList', 'editUser', 'viewUser', 'deleteUser', 'athletesList', 'coachesList',
+            'productGroupsList', 'addProductGroup', 'editProductGroup', 'deleteProductGroup',
+            'productsList', 'addProduct', 'editProduct', 'deleteProduct'
+        ];
+        if (in_array($this->request->param('action'), $adminPages)){
+            if ($this->request->param('action') != 'adminLogin' && !$this->Cookie->read('_token'))
+                $this->redirect('/admin/login');
+            else
+                $this->layout = 'admin';
+        }
+    }
 }

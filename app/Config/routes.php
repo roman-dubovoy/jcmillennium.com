@@ -27,41 +27,44 @@
 	Router::mapResources('users');
 	Router::parseExtensions('json');
 
+	/*App pages for simple users*/
 	Router::connect('/', array('controller' => 'news', 'action' => 'index'));
 	Router::connect('/home', array('controller' => 'news', 'action' => 'index'));
 	Router::connect('/contacts', array('controller' => 'pages', 'action' => 'contacts'));
-	Router::connect('/registration', ['controller' => 'users', 'action' => 'add']);
+	//Router::connect('/registration', ['controller' => 'users', 'action' => 'add']);
 
 	Router::connect('/handleContactsForm', ['controller' => 'feedbacks', 'action' => 'handleContactsForm']);
 
-	Router::connect('/products', ['controller' => 'products', 'action' => 'index']);
-	Router::connect('/products/category/:group_id', ['controller' => 'products', 'action' => 'filteredList'], ['group_id' => '\\d+']);
+	//Router::connect('/products', ['controller' => 'products', 'action' => 'index']);
+	//Router::connect('/products/category/:group_id', ['controller' => 'products', 'action' => 'filteredList'], ['group_id' => '\\d+']);
 
-	Router::connect('/bucket', ['controller' => 'buckets', 'action' => 'view']);
-	Router::connect('/bucket/add', ['controller' => 'buckets', 'action' => 'add']);
-	Router::connect('/bucket/delete/:id', ['controller' => 'buckets', 'action' => 'delete'], ['id' => '\\d+']);
+	//Router::connect('/bucket', ['controller' => 'buckets', 'action' => 'view']);
+	//Router::connect('/bucket/add', ['controller' => 'buckets', 'action' => 'add']);
+	//Router::connect('/bucket/delete/:id', ['controller' => 'buckets', 'action' => 'delete'], ['id' => '\\d+']);
 
-	Router::connect('/admin', ['controller' => 'admins', 'action' => 'index']);
-	Router::connect('/admin/panel', ['controller' => 'admins', 'action' => 'index']);
-	Router::connect('/admin/athletes', ['controller' => 'admins', 'action' => 'athletesList']);
-	Router::connect('/admin/coaches', ['controller' => 'admins', 'action' => 'coachesList']);
+	/*App pages for admin*/
+	Router::connect('/admin/login', ['controller' => 'users', 'action' => 'adminLogin']);
+	Router::connect('/admin/logout', ['controller' => 'users', 'action' => 'adminLogout']);
 
-	Router::connect('/admins/users', ['controller' => 'admins', 'action' => 'usersList']);
-	Router::connect('/admins/user/:id', ['controller' => 'admins', 'action' => 'viewUser'], ['id' => '\\d+']);
-	Router::connect('/admins/user/edit/:id', ['controller' => 'admins', 'action' => 'editUser'], ['id' => '\\d+']);
-	Router::connect('/admins/user/delete/:id', ['controller' => 'admins', 'action' => 'deleteUser'], ['id' => '\\d+']);
+	Router::connect('/admin', ['controller' => 'coaches', 'action' => 'coachesList']);
+	Router::connect('/admin/coaches', ['controller' => 'coaches', 'action' => 'coachesList']);
 
-	Router::connect('/admins/productGroups', ['controller' => 'admins', 'action' => 'productGroupsList']);
-	Router::connect('/admins/productGroups/add', ['controller' => 'admins', 'action' => 'addProductGroup']);
-	Router::connect('/admins/productGroup/edit/:id', ['controller' => 'admins', 'action' => 'editProductGroup'], ['id' => '\\d+']);
-	Router::connect('/admins/productGroup/delete/:id', ['controller' => 'admins', 'action' => 'deleteProductGroup'], ['id' => '\\d+']);
+	Router::connect('/admin/athletes', ['controller' => 'athletes', 'action' => 'athletesList']);
 
-	Router::connect('/admins/products', ['controller' => 'admins', 'action' => 'productsList']);
-	Router::connect('/admins/products/add', ['controller' => 'admins', 'action' => 'addProduct']);
-	Router::connect('/admins/product/edit/:id', ['controller' => 'admins', 'action' => 'editProduct'], ['id' => '\\d+']);
-	Router::connect('/admins/product/delete/:id', ['controller' => 'admins', 'action' => 'deleteProduct'], ['id' => '\\d+']);
+	Router::connect('/admin/users', ['controller' => 'users', 'action' => 'usersList']);
+	Router::connect('/admin/user/:id', ['controller' => 'users', 'action' => 'viewUser'], ['id' => '\\d+']);
+	Router::connect('/admin/user/edit/:id', ['controller' => 'users', 'action' => 'editUser'], ['id' => '\\d+']);
+	Router::connect('/admin/user/delete/:id', ['controller' => 'users', 'action' => 'deleteUser'], ['id' => '\\d+']);
 
+	Router::connect('/admin/productGroups', ['controller' => 'products', 'action' => 'productGroupsList']);
+	Router::connect('/admin/productGroups/add', ['controller' => 'products', 'action' => 'addProductGroup']);
+	Router::connect('/admin/productGroup/edit/:id', ['controller' => 'products', 'action' => 'editProductGroup'], ['id' => '\\d+']);
+	Router::connect('/admin/productGroup/delete/:id', ['controller' => 'products', 'action' => 'deleteProductGroup', 'admin' => true], ['id' => '\\d+']);
 
+	Router::connect('/admin/products', ['controller' => 'products', 'action' => 'productsList']);
+	Router::connect('/admin/products/add', ['controller' => 'products', 'action' => 'addProduct']);
+	Router::connect('/admin/product/edit/:id', ['controller' => 'products', 'action' => 'editProduct'], ['id' => '\\d+']);
+	Router::connect('/admin/product/delete/:id', ['controller' => 'products', 'action' => 'deleteProduct'], ['id' => '\\d+']);
 
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
