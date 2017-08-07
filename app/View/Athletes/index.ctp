@@ -14,6 +14,7 @@
                 ?>
                 <div class="athlete-description">
                     <p class="athlete-name"><?=$athlete['Athlete']['surname'] . ' ' . $athlete['Athlete']['name']?></p>
+                    <p></p>
                     <!--<p class="athlete-rank">Мастер спорта Украины</p>-->
                     <!--<ul class="athlete-achievements">
                         <li>Чемпион турнира "Кубок Федерации г. Киева"</li>

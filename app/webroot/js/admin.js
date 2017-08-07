@@ -164,3 +164,20 @@ $('#products-list').dataTable({
         { "orderable": false, "targets": [1] }
     ]
 });
+
+/*
+$('#add_coach_form').submit(function ( e ) {
+    e.preventDefault();
+    var form = this;
+
+    $.ajax({
+        type: form.attr('method'),
+        url: form.attr('action'),
+        dataType: 'json',
+        data: form.serialize()
+    }).done(function ( response ) {
+        alert('')
+    }).fail(function () {
+        alert('error');
+    });
+});*/

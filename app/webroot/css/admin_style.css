@@ -117,3 +117,53 @@ body{
     font-size: 1.2em;
     margin: 6% 0;
 }
+
+tr.row-text-center > th,
+tr.row-text-center > td{
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.action{
+    margin-right: 5px;
+    text-decoration: none;
+    outline: none;
+}
+
+.action:hover{
+    text-decoration: none;
+    outline: none;
+}
+
+.header > h3{
+    display: inline-block;
+    width: 50%;
+    margin: 5px 0 0 0;
+    font-family: RobotoMedium;
+}
+
+.header > button{
+    float: right;
+}
+
+.non-resizable-textarea{
+    resize: none;
+}
+
+.form{
+    margin-top: 28px;
+}
+
+.form > button{
+    display: block;
+    width: 100%;
+    /*margin: 0 auto;*/
+    float: left;
+}
+
+.form img{
+    margin-bottom: 10px;
+}
+
+.important-hint{
+    color: red

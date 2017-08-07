@@ -47,9 +47,16 @@
 	Router::connect('/admin/logout', ['controller' => 'users', 'action' => 'adminLogout']);
 
 	Router::connect('/admin', ['controller' => 'coaches', 'action' => 'coachesList']);
+
 	Router::connect('/admin/coaches', ['controller' => 'coaches', 'action' => 'coachesList']);
+	Router::connect('/admin/coaches/addCoach', ['controller' => 'coaches', 'action' => 'addCoach']);
+	Router::connect('/admin/coaches/editCoach/:id', ['controller' => 'coaches', 'action' => 'editCoach'], ['id' => '\\d+']);
+	Router::connect('/admin/coaches/deleteCoach/:id', ['controller' => 'coaches', 'action' => 'deleteCoach'], ['id' => '\\d+']);
 
 	Router::connect('/admin/athletes', ['controller' => 'athletes', 'action' => 'athletesList']);
+	Router::connect('/admin/athletes/addAthlete', ['controller' => 'athletes', 'action' => 'addAthlete']);
+	Router::connect('/admin/athletes/editAthlete/:id', ['controller' => 'athletes', 'action' => 'editAthlete'], ['id' => '\\d+']);
+	Router::connect('/admin/athletes/deleteAthlete/:id', ['controller' => 'athletes', 'action' => 'deleteAthlete'], ['id' => '\\d+']);
 
 	Router::connect('/admin/users', ['controller' => 'users', 'action' => 'usersList']);
 	Router::connect('/admin/user/:id', ['controller' => 'users', 'action' => 'viewUser'], ['id' => '\\d+']);

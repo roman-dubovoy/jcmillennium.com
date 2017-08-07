@@ -2,9 +2,10 @@
     <?/*=$this->element("photo-slider");*/?>
     <?=$this->element("side_bar");?>
     <div class="coaches col-xs-10">
-        <? for ($i = 1; $i < 8; $i++): ?>
+        <? foreach ($coachesList as $coach): ?>
             <div class="coaches-item">
-                <?=$this->Html->image('http://placehold.it/300x300',
+                <!-- 'http://placehold.it/300x300', -->
+                <?=$this->Html->image('/img/coaches/' . $coach['Coach']['photo'],
                     [
                         'alt' => 'coach',
                         'width' => '300',
@@ -13,10 +14,11 @@
                     ]);
                 ?>
                 <div class="coach-description">
-                    <p class="coach-name">ФИО Тренера</p>
-                    <p class="coach-rank">Звание, стаж</p>
+                    <p class="coach-name"><?=$coach['Coach']['surname'] . ' ' . $coach['Coach']['name']
+                        . ' ' . $coach['Coach']['last_name']?></p>
+                    <p class="coach-rank"><?=$coach['Coach']['description']?></p>
                 </div>
             </div>
-        <? endfor; ?>
+        <? endforeach; ?>
     </div>
 </div>

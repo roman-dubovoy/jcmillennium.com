@@ -309,7 +309,7 @@ class ViewTaskTest extends CakeTestCase {
 
 		$this->Task->expects($this->at(0))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'edit.ctp',
+				TMP . 'ViewTaskComments' . DS . 'edit_coach.ctp',
 				new PHPUnit_Framework_Constraint_IsAnything()
 			);
 		$this->Task->bake('edit', true);
@@ -383,7 +383,7 @@ class ViewTaskTest extends CakeTestCase {
 			);
 		$this->Task->expects($this->at(1))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'edit.ctp',
+				TMP . 'ViewTaskComments' . DS . 'edit_coach.ctp',
 				$this->stringContains('Edit View Task Comment')
 			);
 		$this->Task->expects($this->at(2))->method('createFile')
@@ -433,7 +433,7 @@ class ViewTaskTest extends CakeTestCase {
 			);
 		$this->Task->expects($this->at(1))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'add.ctp',
+				TMP . 'ViewTaskComments' . DS . 'add_coach.ctp',
 				$this->anything()
 			);
 		$this->Task->expects($this->exactly(2))->method('createFile');
@@ -494,7 +494,7 @@ class ViewTaskTest extends CakeTestCase {
 			);
 		$this->Task->expects($this->at(1))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'add.ctp',
+				TMP . 'ViewTaskComments' . DS . 'add_coach.ctp',
 				$this->anything()
 			);
 		$this->Task->expects($this->exactly(2))->method('createFile');
@@ -527,7 +527,7 @@ class ViewTaskTest extends CakeTestCase {
 			);
 		$this->Task->expects($this->at(1))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'add.ctp',
+				TMP . 'ViewTaskComments' . DS . 'add_coach.ctp',
 				$this->anything()
 			);
 		$this->Task->execute();
@@ -591,13 +591,13 @@ class ViewTaskTest extends CakeTestCase {
 
 		$this->Task->expects($this->at(5))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'add.ctp',
+				TMP . 'ViewTaskComments' . DS . 'add_coach.ctp',
 				$this->stringContains('Add View Task Comment')
 			);
 
 		$this->Task->expects($this->at(6))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'edit.ctp',
+				TMP . 'ViewTaskComments' . DS . 'edit_coach.ctp',
 				$this->stringContains('Edit View Task Comment')
 			);
 

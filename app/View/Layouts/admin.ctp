@@ -24,6 +24,7 @@
         </title>
         <?php
         echo $this->Html->css('bootstrap.css');
+        echo $this->Html->css('font-awesome.css');
         echo $this->Html->css('jquery.dataTables.css');
         echo $this->Html->css('style.css');
         echo $this->Html->css('admin_style.css');

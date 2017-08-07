@@ -1,5 +1,5 @@
 <?php
-App::uses('Model', 'AppModel');
+App::uses('AppModel', 'Model');
 
 class Coach extends Model{
     public $name = 'Coach';

@@ -13,5 +13,5 @@ class PagesController extends AppController{
     public function contacts(){
         $this->render('contacts');
     }
-
+    
 }

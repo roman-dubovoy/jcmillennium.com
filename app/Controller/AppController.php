@@ -36,7 +36,9 @@ class AppController extends Controller {
 
     public function beforeFilter(){
         $adminPages = [
-            'usersList', 'editUser', 'viewUser', 'deleteUser', 'athletesList', 'coachesList',
+            'usersList', 'editUser', 'viewUser', 'deleteUser',
+            'athletesList', 'addAthlete', 'editAthlete', 'deleteAthlete',
+            'coachesList', 'addCoach', 'editCoach', 'deleteCoach',
             'productGroupsList', 'addProductGroup', 'editProductGroup', 'deleteProductGroup',
             'productsList', 'addProduct', 'editProduct', 'deleteProduct'
         ];
