@@ -1,3 +1,6 @@
+<div class="scrolling">
+    <i class="fa fa-chevron-up fa-2x"></i>
+</div>
 <footer class="col-xs-12">
     <div class="copyrights-div col-xs-12">
         <span class="footer-club-name">

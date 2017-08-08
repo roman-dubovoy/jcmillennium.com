@@ -402,7 +402,7 @@ class InflectorTest extends CakeTestCase {
 	public function testClassNaming() {
 		$this->assertEquals(Inflector::classify('artists_genres'), 'ArtistsGenre');
 		$this->assertEquals(Inflector::classify('file_systems'), 'FileSystem');
-		$this->assertEquals(Inflector::classify('news'), 'News');
+		$this->assertEquals(Inflector::classify('news'), 'Posts');
 		$this->assertEquals(Inflector::classify('bureaus'), 'Bureau');
 	}
 
@@ -414,7 +414,7 @@ class InflectorTest extends CakeTestCase {
 	public function testTableNaming() {
 		$this->assertEquals(Inflector::tableize('ArtistsGenre'), 'artists_genres');
 		$this->assertEquals(Inflector::tableize('FileSystem'), 'file_systems');
-		$this->assertEquals(Inflector::tableize('News'), 'news');
+		$this->assertEquals(Inflector::tableize('Posts'), 'news');
 		$this->assertEquals(Inflector::tableize('Bureau'), 'bureaus');
 	}
 

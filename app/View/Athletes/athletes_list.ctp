@@ -1,3 +1,10 @@
+<?php
+    echo $this->Html->script('jquery-3.1.1.js');
+    $this->Paginator->options([
+        'url' => ['controller' => 'athletes', 'action' => 'athletesList'],
+        'update' => '#content'
+    ]);
+?>
 <div class="col-xs-12">
     <?=$this->element('admin/side_bar');?>
     <div class="col-xs-10">
@@ -19,19 +26,19 @@
                     <th>Операции</th>
                 </tr>
                 <? foreach ($athletesList as $athlete): ?>
-                    <tr class="row-text-center">
-                        <td><?=$athlete['Athlete']['id']?></td>
-                        <td><?=$athlete['Athlete']['surname']?></td>
-                        <td><?=$athlete['Athlete']['name']?></td>
+                    <tr>
+                        <td class="text-center"><?=$athlete['Athlete']['id']?></td>
+                        <td class="text-center"><?=$athlete['Athlete']['surname']?></td>
+                        <td class="text-center"d><?=$athlete['Athlete']['name']?></td>
                         <td><?=$athlete['Athlete']['description']?></td>
-                        <td>
+                        <td class="text-center">
                             <img src="<?='/img/athletes/' . $athlete['Athlete']['photo']?>" alt="" width="100">
                         </td>
-                        <td>
-                            <a class="action" href="<?='/admin/athletes/editAthlete/' . $athlete['Athlete']['id']?>">
+                        <td class="text-center">
+                            <a title="Редактировать" class="action" href="<?='/admin/athletes/editAthlete/' . $athlete['Athlete']['id']?>">
                                 <i class="fa fa-pencil-square-o fa-2x"></i>
                             </a>
-                            <a class="action" href="<?='/admin/athletes/deleteAthlete/' . $athlete['Athlete']['id']?>">
+                            <a title="Удалить" class="action" href="<?='/admin/athletes/deleteAthlete/' . $athlete['Athlete']['id']?>">
                                 <i class="fa fa-remove fa-2x"></i>
                             </a>
                         </td>
@@ -39,5 +46,14 @@
                 <? endforeach; ?>
             </table>
         </div>
+        <div class="col-xs-12 pagination-wrapper">
+            <? $this->Paginator->options(['url' => ['controller' => 'athletes', 'action' => 'athletesList']]); ?>
+            <?=$this->Paginator->first('Первая', ['tag' => 'button', 'class' => 'paginate-btn'], null, ['class' => 'disabled']);?>
+            <?=$this->Paginator->prev('Назад', ['tag' => 'button', 'class' => 'paginate-btn'], null, ['class' => 'non-accessible']);?>
+            <?=$this->Paginator->numbers(['tag' => 'button', 'class' => 'paginate-btn', 'separator' => '']);?>
+            <?=$this->Paginator->next('Вперёд', ['tag' => 'button', 'class' => 'paginate-btn'], null, ['class' => 'non-accessible']);?>
+            <?=$this->Paginator->last('Последняя', ['tag' => 'button', 'class' => 'paginate-btn'], null, ['class' => 'disabled']);?>
+        </div>
     </div>
 </div>
+<?=$this->Js->writeBuffer();?>

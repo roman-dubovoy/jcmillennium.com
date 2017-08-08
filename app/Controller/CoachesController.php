@@ -2,8 +2,6 @@
 class CoachesController extends AppController{
     
     public $uses = ['Coach'];
-    public $components = ['RequestHandler', 'Session'];
-    public $helpers = ['Session'];
     const COACHES_PHOTOS_DIR = WWW_ROOT . DS . 'img/coaches/';
 
     public function index(){

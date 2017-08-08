@@ -32,7 +32,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    public $components = ['RequestHandler', 'Session', 'Cookie', 'DebugKit.Toolbar'];
+    public $components = ['RequestHandler', 'Session', 'Cookie', 'DebugKit.Toolbar', 'Paginator'];
+    public $helpers = ['Session', 'Paginator', 'Js'];
 
     public function beforeFilter(){
         $adminPages = [

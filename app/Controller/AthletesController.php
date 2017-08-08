@@ -2,18 +2,30 @@
 class AthletesController extends AppController{
 
     public $uses = ['Athlete'];
-    public $components = ['Session', 'Cookie', 'RequestHandler'];
-    public $helpers = ['Session'];
-    const ATHLETES_PHOTOS_DIR = '/img/athletes/';
+    
+    public $paginate = [
+        'limit' => 8,
+        'order' => [
+            'Athlete.id' => 'asc'
+        ]
+    ];
 
-    public function index(){
-        $athletesList = $this->Athlete->find('all');
+    const ATHLETES_PHOTOS_DIR = WWW_ROOT . DS . '/img/athletes/';
+
+    public function index($page = 1){
+        $this->paginate['page'] = $page;
+        $this->Paginator->settings = $this->paginate;
+        $athletesList = $this->paginate();
         $this->set('athletesList', $athletesList);
+        $this->render('index');
     }
 
-    public function athletesList(){
-        $athletesList = $this->Athlete->find('all');
+    public function athletesList($page = 1){
+        $this->paginate['page'] = $page;
+        $this->Paginator->settings = $this->paginate;
+        $athletesList = $this->paginate();
         $this->set('athletesList', $athletesList);
+        $this->render('athletes_list');
     }
 
     public function addAthlete(){
@@ -55,7 +67,7 @@ class AthletesController extends AppController{
             if (!empty($_FILES['photo']['name'])) {
                 unlink(self::ATHLETES_PHOTOS_DIR . $oldAthlete['Athlete']['photo']);
                 $athletePhoto = $_FILES['photo']['name'];
-                $athletePhoto = time() . '_coach' . substr($athletePhoto, strpos($athletePhoto, '.'), strlen($athletePhoto));
+                $athletePhoto = time() . '_athlete' . substr($athletePhoto, strpos($athletePhoto, '.'), strlen($athletePhoto));
                 if (move_uploaded_file($_FILES['photo']['tmp_name'], self::ATHLETES_PHOTOS_DIR . $athletePhoto)) {
                     $athlete['photo'] = "'" . $athletePhoto . "'";
                 }

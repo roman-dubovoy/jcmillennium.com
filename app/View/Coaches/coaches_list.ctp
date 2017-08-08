@@ -19,20 +19,20 @@
                 <th>Операции</th>
             </tr>
             <? foreach ($coachesList as $coach): ?>
-            <tr class="row-text-center">
-                <td><?=$coach['Coach']['id']?></td>
-                <td><?=$coach['Coach']['surname']?></td>
-                <td><?=$coach['Coach']['name']?></td>
-                <td><?=$coach['Coach']['last_name']?></td>
+            <tr>
+                <td class="text-center"><?=$coach['Coach']['id']?></td>
+                <td class="text-center"><?=$coach['Coach']['surname']?></td>
+                <td class="text-center"><?=$coach['Coach']['name']?></td>
+                <td class="text-center"><?=$coach['Coach']['last_name']?></td>
                 <td><?=$coach['Coach']['description']?></td>
-                <td>
+                <td class="text-center">
                     <img src="<?='/img/coaches/' . $coach['Coach']['photo']?>" alt="" width="200">
                 </td>
-                <td>
-                    <a class="action" href="<?='/admin/coaches/editCoach/' . $coach['Coach']['id']?>">
+                <td class="text-center">
+                    <a title="Редактировать"class="action" href="<?='/admin/coaches/editCoach/' . $coach['Coach']['id']?>">
                         <i class="fa fa-pencil-square-o fa-2x"></i>
                     </a>
-                    <a class="action" href="<?='/admin/coaches/deleteCoach/' . $coach['Coach']['id']?>">
+                    <a title="Удалить" class="action" href="<?='/admin/coaches/deleteCoach/' . $coach['Coach']['id']?>">
                         <i class="fa fa-remove fa-2x"></i>
                     </a>
                 </td>

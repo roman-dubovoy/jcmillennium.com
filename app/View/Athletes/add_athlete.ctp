@@ -3,7 +3,7 @@
     <div class="col-xs-10">
         <div class="header">
             <h3>Добавить нового спортсмена:</h3>
-            <button class="btn btn-primary" onclick="location.href = '/admin/athletes';">
+            <button class="btn btn-primary" onclick="prevPage('athletes');">
                 <i class="fa fa-arrow-left"></i>
                 На предыдущую страницу
             </button>

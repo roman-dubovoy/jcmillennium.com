@@ -726,3 +726,44 @@ admins/athletesList
 .alert{
     border-radius: 0;
 }
+
+/* Pagination styles */
+.pagination-wrapper{
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.paginate-btn{
+    margin: 5px;
+    background-color: #d6d7d9;
+    color: #0088d6;
+}
+
+.paginate-btn > a,
+.current{
+    display: block;
+    padding: 10px 17px;
+    font-size: 16px;
+}
+
+.paginate-btn > a,
+.paginate-btn > a:hover{
+    outline: none;
+    text-decoration: none;
+}
+
+.current{
+    background-color: #0088d6;
+    color: #d6d7d9;
+}
+
+.non-accessible{
+    display: block;
+    padding: 10px 17px;
+    font-size: 16px;
+    margin: 5px;
+    background-color: #d6d7d9;
+    color: grey;
+}

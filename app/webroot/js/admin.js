@@ -181,3 +181,16 @@ $('#add_coach_form').submit(function ( e ) {
         alert('error');
     });
 });*/
+
+/* Function for generating routes where pagination exits */
+function prevPage(controller){
+    var referrer = document.referrer;
+    var to = '/admin/' + controller;
+    if(referrer.indexOf('/page') != -1){
+        to = to + referrer.substring(referrer.indexOf('/page'));
+        location.href = to;
+    }
+    else{
+        location.href = to;
+    }
+}

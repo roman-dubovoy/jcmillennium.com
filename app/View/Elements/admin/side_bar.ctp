@@ -20,9 +20,10 @@
             <li><a href="#">РЕЗУЛЬТАТЫ</a></li>
             <li><?=$this->Html->link("ТРЕНЕРЫ", "/admin/coaches");?></li>
             <li><?=$this->Html->link("СПОРТСМЕНЫ", "/admin/athletes");?></li>
-            <li><?=$this->Html->link("ПОЛЬЗОВАТЕЛИ", "/admin/users");?></li>
-            <li><?=$this->Html->link("ГРУППЫ ТОВАРОВ", "/admin/productGroups");?></li>
-            <li><?=$this->Html->link("ТОВАРЫ", "/admin/products");?></li>
+            <!--<li><?/*=$this->Html->link("ПОЛЬЗОВАТЕЛИ", "/admin/users");*/?></li>
+            <li><?/*=$this->Html->link("ГРУППЫ ТОВАРОВ", "/admin/productGroups");*/?></li>
+            <li><?/*=$this->Html->link("ТОВАРЫ", "/admin/products");*/?></li>-->
+            <li><a href="#">ФОТО</a></li>
             <li><a href="#">ВИДЕО</a></li>
             <li><a href="#">КАЛЕНДАРЬ</a></li>
             <li><a href="#">РАСПИСАНИЕ</a></li>

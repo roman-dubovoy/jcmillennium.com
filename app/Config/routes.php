@@ -28,9 +28,11 @@
 	Router::parseExtensions('json');
 
 	/*App pages for simple users*/
-	Router::connect('/', array('controller' => 'news', 'action' => 'index'));
-	Router::connect('/home', array('controller' => 'news', 'action' => 'index'));
-	Router::connect('/contacts', array('controller' => 'pages', 'action' => 'contacts'));
+	Router::connect('/', ['controller' => 'posts', 'action' => 'index']);
+	Router::connect('/home', ['controller' => 'posts', 'action' => 'index']);
+	Router::connect('/athletes/page/:page', ['controller' => 'athletes', 'action' => 'index'],
+			['pass' => ['page'], 'page' => '\\d+']);
+	Router::connect('/contacts', ['controller' => 'pages', 'action' => 'contacts']);
 	//Router::connect('/registration', ['controller' => 'users', 'action' => 'add']);
 
 	Router::connect('/handleContactsForm', ['controller' => 'feedbacks', 'action' => 'handleContactsForm']);
@@ -54,6 +56,8 @@
 	Router::connect('/admin/coaches/deleteCoach/:id', ['controller' => 'coaches', 'action' => 'deleteCoach'], ['id' => '\\d+']);
 
 	Router::connect('/admin/athletes', ['controller' => 'athletes', 'action' => 'athletesList']);
+	Router::connect('/admin/athletes/page/:page', ['controller' => 'athletes', 'action' => 'athletesList'],
+					['pass' => ['page'], 'page' => '\\d+']);
 	Router::connect('/admin/athletes/addAthlete', ['controller' => 'athletes', 'action' => 'addAthlete']);
 	Router::connect('/admin/athletes/editAthlete/:id', ['controller' => 'athletes', 'action' => 'editAthlete'], ['id' => '\\d+']);
 	Router::connect('/admin/athletes/deleteAthlete/:id', ['controller' => 'athletes', 'action' => 'deleteAthlete'], ['id' => '\\d+']);

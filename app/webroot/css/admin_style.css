@@ -55,6 +55,11 @@ body{
     font-family: RobotoLight;
 }
 
+::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
+}
+
 #container{
     width: 1200px;
 }
@@ -113,13 +118,17 @@ body{
 }
 
 .login-btn{
-    width: 100% !important;
+    width: 100%;
     font-size: 1.2em;
     margin: 6% 0;
 }
 
-tr.row-text-center > th,
-tr.row-text-center > td{
+tr.row-text-center > th{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.text-center{
     vertical-align: middle !important;
     text-align: center !important;
 }
@@ -165,5 +174,70 @@ tr.row-text-center > td{
     margin-bottom: 10px;
 }
 
-.important-hint{
-    color: red
+.important-hint {
+    color: red;
+}
+
+.pagination-wrapper{
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.paginate-btn{
+    margin: 5px;
+    background-color: #d6d7d9;
+    color: #0088d6;
+}
+
+.paginate-btn > a,
+.current{
+    display: block;
+    padding: 10px 17px;
+    font-size: 16px;
+}
+
+.paginate-btn > a,
+.paginate-btn > a:hover{
+    outline: none;
+    text-decoration: none;
+}
+
+.current{
+    background-color: #0088d6;
+    color: #d6d7d9;
+}
+
+.non-accessible{
+    display: block;
+    padding: 10px 17px;
+    font-size: 16px;
+    margin: 5px;
+    background-color: #d6d7d9;
+    color: grey;
+}
+
+.sorting > a,
+.sorting > a:hover{
+    text-decoration: none;
+    outline: none;
+    color: #333;
+}
+
+.scrolling{
+    position: fixed;
+    color: #edeef0;
+    font-size: 20px;
+    right: 10px;
+    bottom: 76px;
+    z-index: 100 ;
+    border: 3px solid #edeef0;
+    padding: 0 3px 5px 3px;
+    transition: .3s;
+}
+
+.scrolling:hover{
+    color: #507299;
+    background-color: #edeef0;
+}
