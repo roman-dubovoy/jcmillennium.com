@@ -28,13 +28,26 @@
 	Router::parseExtensions('json');
 
 	/*App pages for simple users*/
-	Router::connect('/', ['controller' => 'posts', 'action' => 'index']);
-	Router::connect('/home', ['controller' => 'posts', 'action' => 'index']);
+	Router::connect('/', ['controller' => 'pages', 'action' => 'home']);
+	Router::connect('/home', ['controller' => 'pages', 'action' => 'home']);
+	Router::connect('/club', ['controller' => 'pages', 'action' => 'club']);
+	Router::connect('/news', ['controller' => 'posts', 'action' => 'index']);
+	Router::connect('/results', ['controller' => 'posts', 'action' => 'results']);
+	Router::connect('/coaches', ['controller' => 'coaches', 'action' => 'index']);
 	Router::connect('/athletes/page/:page', ['controller' => 'athletes', 'action' => 'index'],
 			['pass' => ['page'], 'page' => '\\d+']);
 	Router::connect('/contacts', ['controller' => 'pages', 'action' => 'contacts']);
-	//Router::connect('/registration', ['controller' => 'users', 'action' => 'add']);
 
+	/*Routes for sidebar*/
+	Router::connect('/judo', ['controller' => 'pages', 'action' => 'judo']);
+	Router::connect('/emblem', ['controller' => 'pages', 'action' => 'emblem']);
+	Router::connect('/gallery', ['controller' => 'pages', 'action' => 'emblem']);
+	Router::connect('/videos', ['controller' => 'pages', 'action' => 'emblem']);
+	Router::connect('/calendar', ['controller' => 'pages', 'action' => 'emblem']);
+	Router::connect('/schedule', ['controller' => 'pages', 'action' => 'emblem']);
+	Router::connect('/exams', ['controller' => 'pages', 'action' => 'emblem']);
+
+	//Router::connect('/registration', ['controller' => 'users', 'action' => 'add']);
 	Router::connect('/handleContactsForm', ['controller' => 'feedbacks', 'action' => 'handleContactsForm']);
 
 	//Router::connect('/products', ['controller' => 'products', 'action' => 'index']);
@@ -49,6 +62,13 @@
 	Router::connect('/admin/logout', ['controller' => 'users', 'action' => 'adminLogout']);
 
 	Router::connect('/admin', ['controller' => 'coaches', 'action' => 'coachesList']);
+
+	Router::connect('/admin/posts', ['controller' => 'posts', 'action' => 'postsList']);
+	Router::connect('/admin/posts/page/:page', ['controller' => 'posts', 'action' => 'postsList'],
+		['pass' => ['page'], 'page' => '\\d+']);
+	Router::connect('/admin/posts/addPost', ['controller' => 'posts', 'action' => 'addPost']);
+	Router::connect('/admin/posts/editPost/:id', ['controller' => 'posts', 'action' => 'editPost'], ['id' => '\\d+']);
+	Router::connect('/admin/posts/deletePost/:id', ['controller' => 'posts', 'action' => 'deletePost'], ['id' => '\\d+']);
 
 	Router::connect('/admin/coaches', ['controller' => 'coaches', 'action' => 'coachesList']);
 	Router::connect('/admin/coaches/addCoach', ['controller' => 'coaches', 'action' => 'addCoach']);

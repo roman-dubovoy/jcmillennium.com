@@ -10,26 +10,27 @@
 
     <div class="side-menu col-xs-12">
         <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">ДЗЮДО</a></li>
-            <li><a href="#">НАША ЭМБЛЕМА</a></li>
-           <!-- <li><?/*=$this->Html->link("МАГАЗИН", "/products");*/?></li>
+            <li><?=$this->Html->link("ДЗЮДО", "/judo");?></li>
+            <li><?=$this->Html->link("НАША ЭМБЛЕМА", "/emblem");?></li>
+            <li><?=$this->Html->link("ГАЛЕРЕЯ", "/gallery");?></li>
+            <li><?=$this->Html->link("ВИДЕО", "/videos");?></li>
+            <li><?=$this->Html->link("КАЛЕНДАРЬ", "/calendar");?></li>
+            <li><?=$this->Html->link("РАСПИСАНИЕ", "/schedule");?></li>
+            <li><?=$this->Html->link("ЭКЗАМЕНЫ НА КЮ", "/exams");?></li>
+            <!-- <li><?/*=$this->Html->link("МАГАЗИН", "/products");*/?></li>
             <li><?/*=$this->Html->link("КОРЗИНА", "/bucket");*/?></li>-->
-            <li><a href="#">ФОТО</a></li>
-            <li><a href="#">ВИДЕО</a></li>
-            <li><a href="#">КАЛЕНДАРЬ</a></li>
-            <li><a href="#">РАСПИСАНИЕ</a></li>
-            <li><a href="#">ЭКЗАМЕНЫ НА КЮ</a></li>
         </ul>
     </div>
 
-    <!--<div class="img-divider col-xs-12">
-        <?/*=$this->Html->image("divider.png",
+    <div class="img-divider col-xs-12">
+        <?=$this->Html->image("divider.png",
             [
                 'alt' => "divider",
                 'class' => 'col-xs-12'
             ]
-        );*/?>
-    </div>-->
+        );?>
+    </div>
+
    <!-- <?/* if (empty($this->Session->read('user'))): */?>
         <div class="side-bar-auth">
             <p>Авторизация</p>
@@ -64,14 +65,6 @@
         </button>
     --><?/* endif; */?>
 
-    <div class="img-divider col-xs-12">
-        <?=$this->Html->image("divider.png",
-            [
-                'alt' => "divider",
-                'class' => 'col-xs-12'
-            ]
-        );?>
-    </div>
     <div class="useful-sites col-xs-12">
         <p>Полезные сайты</p>
         <? echo $this->Html->link($this->Html->image("sidebar/eju.png",

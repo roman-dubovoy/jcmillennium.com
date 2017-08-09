@@ -32,14 +32,29 @@
 	?>
 </head>
 <body>
+	<!--<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.10&appId=303988003399001";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>-->
 	<div id="container" class="container">
 		<div id="header" class="row">
 			<?=$this->element('header');?>
 		</div>
 
 		<div id="content" class="row">
-			<?php echo $this->Session->flash(); ?>
-			<?php echo $this->fetch('content'); ?>
+			<?=$this->Session->flash(); ?>
+			<div class="col-xs-12">
+				<? if ($this->request->url == '' || $this->request->url == 'home')
+					echo $this->element('photo_slider');
+				?>
+				<?=$this->element("side_bar");?>
+				<?=$this->fetch('content'); ?>
+			</div>
 		</div>
 
 		<div id="footer" class="row">

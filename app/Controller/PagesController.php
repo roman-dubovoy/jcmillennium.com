@@ -6,12 +6,24 @@
  * Class PagesController
  */
 class PagesController extends AppController{
+    
+    public function home(){
+        $this->render('home');
+    }
 
-    public $components = ['Session', 'Cookie'];
-    public $helpers = ['Session'];
+    public function club(){
+        $this->render('club');
+    }
     
     public function contacts(){
         $this->render('contacts');
     }
-    
+
+    public function judo(){
+        $this->render('judo');
+    }
+
+    public function emblem(){
+        $this->render('emblem');
+    }
 }

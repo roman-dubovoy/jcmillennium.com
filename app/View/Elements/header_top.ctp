@@ -2,7 +2,7 @@
     <?=$this->Html->image("millenium_logo.png",
         [
             'alt' => "Millennium JC logo",
-            'url' => "/",
+            'url' => "/home",
             'width' => "100",
             'class' => 'col-xs-2 img-responsive'
         ]

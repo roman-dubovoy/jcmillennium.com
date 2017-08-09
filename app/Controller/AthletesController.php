@@ -13,6 +13,7 @@ class AthletesController extends AppController{
     const ATHLETES_PHOTOS_DIR = WWW_ROOT . DS . '/img/athletes/';
 
     public function index($page = 1){
+        $this->layout = ($this->request->is("ajax")) ? "ajax" : "default";
         $this->paginate['page'] = $page;
         $this->Paginator->settings = $this->paginate;
         $athletesList = $this->paginate();

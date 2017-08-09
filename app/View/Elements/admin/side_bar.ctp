@@ -16,8 +16,8 @@
     <div class="side-menu col-xs-12">
         <p>Управление разделами:</p>
         <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">НОВОСТИ</a></li>
-            <li><a href="#">РЕЗУЛЬТАТЫ</a></li>
+            <li><?=$this->Html->link("НОВОСТИ", "/admin/posts");?></li>
+            <li><?=$this->Html->link("РЕЗУЛЬТАТЫ", "/admin/results");?></li>
             <li><?=$this->Html->link("ТРЕНЕРЫ", "/admin/coaches");?></li>
             <li><?=$this->Html->link("СПОРТСМЕНЫ", "/admin/athletes");?></li>
             <!--<li><?/*=$this->Html->link("ПОЛЬЗОВАТЕЛИ", "/admin/users");*/?></li>
